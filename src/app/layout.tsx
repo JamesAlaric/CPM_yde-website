@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { mts } from "./font";
-import "./styles/globals.css";
-
-
+import { mts } from "./frontend/font";
+import "./frontend/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "CPM Yaoundé",
@@ -15,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr"className={`${mts.variable}`} >
+    <html lang="fr" className={`${mts.variable}`}>
       <body>{children}</body>
     </html>
   );

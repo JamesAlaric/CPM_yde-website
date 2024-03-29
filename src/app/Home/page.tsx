@@ -1,9 +1,9 @@
 import React from 'react'
 
-const index : React.FC = () => {
+const page : React.FC = () => {
   return (
     <div>Yo</div>
   )
 }
 
-export default index
+export default page
