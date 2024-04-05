@@ -1,5 +1,9 @@
-import { Fragment, useState } from "react";
+"use client";
+
+import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import CPM from "@/app/frontend/assets/CPM_logo.svg";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
   Menu,
@@ -13,11 +17,11 @@ import {
   NotebookPen,
 } from "lucide-react";
 
-const products = [
+const services = [
   {
     name: "Thérapie Individuelle",
     description:
-      " troubles émotionnels, relationnels, psychologiques ; adolescents, adultes.",
+      " troubles émotionnels, relationnels, psychologiques, adolescents, adultes.",
     href: "#",
     icon: UserRound,
   },
@@ -42,38 +46,63 @@ const products = [
     icon: Combine,
   },
 ];
+
+const menuItems = [
+  { name: "Services", href: "#", subItems: services },
+  { name: "A propos", href: "#" },
+  { name: "Localisation", href: "#" },
+  { name: "Tarifs Consultation", href: "#" },
+];
+
 const callsToAction = [
-  { name: "Reservation", href: "#", icon: NotebookPen },
-  { name: "Appeler", href: "#", icon: Phone },
+  { name: "Reservation", href: "#", icon: NotebookPen, color: "seagull" },
+  { name: "Appeler", href: "#", icon: Phone, color: "lime" },
 ];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+const Navbar: React.FC = () => {
+  const [navbarBg, setNavbarBg] = useState("bg-transparent");
+  const [navbarText, setNavbarText] = useState("text-white");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      setNavbarBg("bg-white");
+      setNavbarText("text-gray-800/50");
+    } else {
+      setNavbarBg("bg-transparent");
+      setNavbarText("text-white");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="bg-white">
+    <header
+      className={`fixed w-full z-50 transition duration-500 ease-in-out ${navbarBg} ${navbarText}`}
+    >
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <Image
-              className="h-8 w-auto"
-              src="https://tailwindui.com/Image/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
-          </a>
+          <Link href="#" className="-m-1.5 p-1.5">
+            <span className="sr-only">CPM</span>
+            <Image className="h-20 w-auto" src={CPM} alt="cpm_logo" />
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 "
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Ouvrir menu</span>
@@ -81,83 +110,91 @@ export default function Example() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
-              <ChevronDown
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </Popover.Button>
+          {menuItems.map((menuItem) => (
+            <Fragment key={menuItem.name}>
+              {menuItem.subItems ? (
+                <Popover className="relative">
+                  <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 ">
+                    {menuItem.name}
+                    <ChevronDown
+                      className="h-5 w-5 flex-none"
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
 
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
-                  {products.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                          aria-hidden="true"
-                        />
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                  >
+                    <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                      <div className="p-4">
+                        {menuItem.subItems.map((item) => (
+                          <div
+                            key={item.name}
+                            className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-seagull-50"
+                          >
+                            <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-seagull-50 group-hover:bg-white">
+                              <item.icon
+                                className="h-6 w-6 text-seagull-950 group-hover:text-seagull-600"
+                                aria-hidden="true"
+                              />
+                            </div>
+                            <div className="flex-auto">
+                              <Link
+                                href={item.href}
+                                className="block font-semibold text-seagull-950"
+                              >
+                                {item.name}
+                                <span className="absolute inset-0" />
+                              </Link>
+                              <p className="mt-1 text-seagull-900">
+                                {item.description}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                      <div className="flex-auto">
-                        <a
-                          href={item.href}
-                          className="block font-semibold text-gray-900"
-                        >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
+                      <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-100/75">
+                        {callsToAction.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className={`flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-seagull-950 hover:bg-${item.color}-100 hover:text-${item.color}-800`}
+                          >
+                            <item.icon
+                              className={"h-5 w-5 flex-none"}
+                              aria-hidden="true"
+                            />
+                            {item.name}
+                          </Link>
+                        ))}
                       </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                  {callsToAction.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                    >
-                      <item.icon
-                        className="h-5 w-5 flex-none text-gray-400"
-                        aria-hidden="true"
-                      />
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </Popover.Panel>
-            </Transition>
-          </Popover>
-
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Etapes
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Company
-          </a>
+                    </Popover.Panel>
+                  </Transition>
+                </Popover>
+              ) : (
+                <Link
+                  href={menuItem.href}
+                  className="text-sm font-semibold leading-6 "
+                >
+                  {menuItem.name}
+                </Link>
+              )}
+            </Fragment>
+          ))}
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Faire une Reservation <span aria-hidden="true">&rarr;</span>
-          </a>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
+          <Link
+            href="#"
+            className="text-sm font-semibold leading-6 bg-seagull-500 p-2 rounded-md "
+          >
+            Faites une Réservation en ligne <span aria-hidden="true">&rarr;</span>
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -169,14 +206,10 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <Image
-                className="h-8 w-auto"
-                src="https://tailwindui.com/Image/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
-            </a>
+            <Link href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">CPM</span>
+              <Image className="h-8 w-auto" src={CPM} alt="cpm-mini_logo" />
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -189,60 +222,54 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <Disclosure as="div" className="-mx-3">
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                        Product
-                        <ChevronDown
-                          className={classNames(
-                            open ? "rotate-180" : "",
-                            "h-5 w-5 flex-none"
-                          )}
-                          aria-hidden="true"
-                        />
-                      </Disclosure.Button>
-                      <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products, ...callsToAction].map((item) => (
-                          <Disclosure.Button
-                            key={item.name}
-                            as="a"
-                            href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >
-                            {item.name}
-                          </Disclosure.Button>
-                        ))}
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
+                {menuItems.map((menuItem) => (
+                  <div key={menuItem.name}>
+                    {menuItem.subItems ? (
+                      <Disclosure>
+                        {({ open }) => (
+                          <>
+                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                              {menuItem.name}
+                              <ChevronDown
+                                className={classNames(
+                                  open ? "rotate-180" : "",
+                                  "h-5 w-5 flex-none"
+                                )}
+                                aria-hidden="true"
+                              />
+                            </Disclosure.Button>
+                            <Disclosure.Panel className="mt-2 space-y-2">
+                              {menuItem.subItems.map((subItem) => (
+                                <a
+                                  key={subItem.name}
+                                  href={subItem.href}
+                                  className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                >
+                                  {subItem.name}
+                                </a>
+                              ))}
+                            </Disclosure.Panel>
+                          </>
+                        )}
+                      </Disclosure>
+                    ) : (
+                      <a
+                        href={menuItem.href}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        {menuItem.name}
+                      </a>
+                    )}
+                  </div>
+                ))}
               </div>
               <div className="py-6">
-                <a
+                <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg bg-seagull-500 p-2 px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-seagull-700"
                 >
-                  Faire une Reservation
-                </a>
+                  Faites une Réservation en ligne
+                </Link>
               </div>
             </div>
           </div>
@@ -250,4 +277,6 @@ export default function Example() {
       </Dialog>
     </header>
   );
-}
+};
+
+export default Navbar;
