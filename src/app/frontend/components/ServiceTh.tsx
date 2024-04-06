@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Couple from "@/app/frontend/assets/couple.png";
+import Couple from "@/app/frontend/assets/coupledisc.png";
 import Famille from "@/app/frontend/assets/therapFam.png";
 import Education from "@/app/frontend/assets/childeduc.png";
 import Indiv from "@/app/frontend/assets/indiv1.png";
@@ -33,15 +33,15 @@ const features = [
 
 export default function ServTh() {
   return (
-    <div className="overflow-hidden bg-gradient-to-t from-white via-seagull-50/100 to-white my-0 py-12 sm:py-32 mx-auto max-w-screen-2xl px-4  sm:px-6 lg:px-8">
+    <div id="Services" className="overflow-hidden bg-gradient-to-t from-white via-seagull-50/100 to-white my-0 py-12 sm:py-32 mx-auto max-w-screen-2xl px-4  sm:px-6 lg:px-8">
       <h2 className="text-3xl text-seagull-950 font-bold tracking-tight sm:text-4xl ">
-            Services de Thérapie
-          </h2>
-          <span className="block h-1 mt-2 bg-seagull-500 w-32 rounded-sm my-4"></span>
+        Services de Thérapie
+      </h2>
+      <span className="block h-1 mt-2 bg-seagull-500 w-32 rounded-sm my-4"></span>
 
-          <p className="mt-4 text-seagull-950/70">
-            Au CPM il vous sera offert les services suivants:
-          </p>
+      <p className="mt-4 text-seagull-950/70">
+        Au CPM il vous sera offert les services suivants:
+      </p>
       {features.map((feature, index) => (
         <div
           key={feature.id}

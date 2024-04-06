@@ -3,7 +3,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import CPM from "@/app/frontend/assets/CPM_logo.svg";
+import CPM from "@/app/frontend/assets/CPM-LogoMini.png";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
   Menu,
@@ -48,10 +48,10 @@ const services = [
 ];
 
 const menuItems = [
-  { name: "Services", href: "#", subItems: services },
-  { name: "A propos", href: "#" },
-  { name: "Localisation", href: "#" },
-  { name: "Tarifs Consultation", href: "#" },
+  { name: "A propos", href: "#Bienvenu" },
+  { name: "Services", href: "#Service", subItems: services },
+  { name: "Contacts", href: "#Contacts" },
+  { name: "Tarifs Consultation", href: "#Tarifs" },
 ];
 
 const callsToAction = [
@@ -59,15 +59,15 @@ const callsToAction = [
   { name: "Appeler", href: "#", icon: Phone, color: "lime" },
 ];
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+function classNames(...classNamees: string[]) {
+  return classNamees.filter(Boolean).join(" ");
 }
 
 const Navbar: React.FC = () => {
   const [navbarBg, setNavbarBg] = useState("bg-transparent");
   const [navbarText, setNavbarText] = useState("text-white");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  
   const handleScroll = () => {
     if (window.scrollY > 20) {
       setNavbarBg("bg-white");
@@ -93,17 +93,19 @@ const Navbar: React.FC = () => {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
-          <Link href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">CPM</span>
-            <Image className="h-20 w-auto" src={CPM} alt="cpm_logo" />
-          </Link>
-        </div>
+        {!mobileMenuOpen && (
+          <div className="flex lg:flex-1">
+            <Link href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">CPM</span>
+              <Image className="h-10 w-auto" src={CPM} alt="cpm_logo" />
+            </Link>
+          </div>
+        )}
         <div className="flex lg:hidden">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 "
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Ouvrir menu</span>
             <Menu className="h-6 w-6" aria-hidden="true" />
@@ -191,9 +193,10 @@ const Navbar: React.FC = () => {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
           <Link
             href="#"
-            className="text-sm font-semibold leading-6 bg-seagull-500 p-2 rounded-md "
+            className="text-sm font-semibold leading-6 bg-seagull-500 hover:bg-seagull-600 p-2 rounded-md "
           >
-            Faites une Réservation en ligne <span aria-hidden="true">&rarr;</span>
+            Faites une Réservation en ligne{" "}
+            <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </nav>

@@ -8,9 +8,9 @@ const Footer = () => {
     <footer className="bg-gray-100">
       <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
-          <a
+          <Link
             className="inline-block rounded-full bg-seagull-600 p-2 text-white shadow transition hover:bg-seagull-500 sm:p-3 lg:p-4"
-            href="#MainContent"
+            href="#Bienvenu"
           >
             <span className="sr-only">Back to top</span>
 
@@ -26,65 +26,66 @@ const Footer = () => {
                 clipRule="evenodd"
               />
             </svg>
-          </a>
+          </Link>
         </div>
 
         <div className="lg:flex lg:items-end lg:justify-between">
           <div>
-            <div className="flex justify-center text-teal-600 lg:justify-start">
+            <div className="flex justify-center lg:justify-start">
               <Image src={CPM} alt="CPM Logo" width={200} height={50} />
             </div>
 
             <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
-              N&apos;hésitez pas à nous suivre sur nos différents réseaux sociaux
+              N&apos;hésitez pas à nous suivre sur nos différents réseaux
+              sociaux
             </p>
           </div>
 
           <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
             <li>
-              <a
+              <Link
                 className="text-gray-700 transition hover:text-gray-700/75"
-                href="#"
+                href="#Bienvenu"
               >
                 {" "}
-                About{" "}
-              </a>
+                A Propos{" "}
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="text-gray-700 transition hover:text-gray-700/75"
-                href="#"
+                href="#Services"
               >
                 {" "}
                 Services{" "}
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="text-gray-700 transition hover:text-gray-700/75"
-                href="#"
+                href="#Contacts"
               >
                 {" "}
-                Projects{" "}
-              </a>
+                Contacts{" "}
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="text-gray-700 transition hover:text-gray-700/75"
-                href="#"
+                href="#Tarifs"
               >
                 {" "}
-                Blog{" "}
-              </a>
+                Tarifs{" "}
+              </Link>
             </li>
           </ul>
         </div>
 
         <p className="mt-12 text-center text-sm text-gray-500 lg:text-right">
-          Copyright &copy; 2022. All rights reserved.
+          Copyright &copy; CPM Yaoundé 2024. All rights reserved.
         </p>
       </div>
     </footer>

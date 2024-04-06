@@ -57,8 +57,11 @@ export default function WhyCPM() {
             <div className="flex items-center mt-12 pl-9">
               <p className="text-seagull-950/75 ">
                 Vous pouvez consulter nos tarifs en cliquant {"  "}
-                <Link href="/Pricing" className="underline hover:text-seagull-500">
-                {"  "}ICI
+                <Link
+                  href="/Pricing"
+                  className="underline hover:text-seagull-500"
+                >
+                  {"  "}ICI
                 </Link>
               </p>
             </div>
