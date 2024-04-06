@@ -2,7 +2,7 @@ import React from "react";
 
 const ReservationForm: React.FC = () => {
   return (
-    <div className="lg:w-full md:w-1/2 sm:my-4 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+    <div className="lg:w-full md:w-1/2 sm:my-4 bg-gray-100 rounded-lg p-8 shadow-md flex flex-col md:ml-auto w-full mt-10 md:mt-0">
       <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
         FORMULAIRE DE RENDEZ-VOUS
       </h2>
