@@ -55,10 +55,10 @@ const page: React.FC = () => {
         </div>
         <div className="mx-auto pt-10 grid grid-cols-1 lg:mx-4 lg:max-w-none lg:grid-cols-1 lg:items-start lg:gap-y-0">
           <Desc />
+          <Serv />
           <div className="lg:-ml-12 -mt-14 lg:p-12  lg:sticky lg:top-8 lg:col-start-2 lg:row-start-1 lg:overflow-hidden">
             <ReservationForm />
           </div>
-          <Serv />
         </div>
       </div>
 

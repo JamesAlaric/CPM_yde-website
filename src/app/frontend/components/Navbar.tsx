@@ -50,8 +50,8 @@ const services = [
 const menuItems = [
   { name: "A propos", href: "#Bienvenu" },
   { name: "Services", href: "#Service", subItems: services },
-  { name: "Contacts", href: "#Contacts" },
-  { name: "Tarifs Consultation", href: "#Tarifs" },
+  { name: "Contacts", href: "/Contacts" },
+  { name: "Tarifs Consultation", href: "/Tarifs" },
 ];
 
 const callsToAction = [
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
   const [navbarBg, setNavbarBg] = useState("bg-transparent");
   const [navbarText, setNavbarText] = useState("text-white");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   const handleScroll = () => {
     if (window.scrollY > 20) {
       setNavbarBg("bg-white");
