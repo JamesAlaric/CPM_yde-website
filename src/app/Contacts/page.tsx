@@ -62,7 +62,7 @@ const ContactsPage = () => {
                 EMAIL
               </h2>
               <a
-                href="mailto:secretariat@cpm-ipm.org"
+                href="mailto:Secretariat@cpm-ipm.org"
                 className="text-seagull-500 leading-relaxed"
               >
                 secretariat@cpm-ipm.org
@@ -210,7 +210,9 @@ const ContactsPage = () => {
                     "flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-seagull-600"
                   )}
                 >
-                  <span className="sr-only">Acceptez les politique de confidentialité</span>
+                  <span className="sr-only">
+                    Acceptez les politique de confidentialité
+                  </span>
                   <span
                     aria-hidden="true"
                     className={classNames(
@@ -223,7 +225,7 @@ const ContactsPage = () => {
               <Switch.Label className="text-sm leading-6 text-gray-600">
                 En Selectionnant , vous acceptez la{" "}
                 <a href="#" className="font-semibold text-seagull-600">
-                politique de confidentialité
+                  politique de confidentialité
                 </a>
                 .
               </Switch.Label>

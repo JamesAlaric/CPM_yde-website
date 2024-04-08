@@ -9,8 +9,8 @@ const ContactBoard: React.FC = () => {
           <div className="p-4 lg:w-1/3">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.78986022370728!2d11.526772452475472!3d3.8875759901473876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bc55a70bf331f%3A0xc4005ee620c3c476!2sIPM%2FCPM%20(Institut%20de%20Psychotraumatologie%20et%20de%20M%C3%A9diation)!5e0!3m2!1sen!2scm!4v1712371320317!5m2!1sen!2scm"
-              width="400"
-              height="400"
+              width="384"
+              height="384"
               className="rounded-lg"
               style={{ border: 0 }}
               allowFullScreen={true}
@@ -19,7 +19,7 @@ const ContactBoard: React.FC = () => {
             ></iframe>
           </div>
           <div className="p-4 lg:w-1/3">
-            <div className="h-full bg-slate-50  px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+            <div className="h-96 bg-slate-50 px-2 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
               <div className="group flex justify-center gap-1.5 text-gray-700 transition ">
                 Ligne Ouverte
                 <span className="relative flex h-2 w-2">
@@ -41,7 +41,7 @@ const ContactBoard: React.FC = () => {
               <p className="my-2">
                 ou <br /> Appelez
               </p>
-              <div className="flex justify-center space-x-4">
+              <div className="flex justify-center space-x-2">
                 <Link
                   href={"tel:+237655656678"}
                   className="text-lime-100 hover:text-lime-600"
@@ -63,7 +63,7 @@ const ContactBoard: React.FC = () => {
             </div>
           </div>
           <div className="p-4 lg:w-1/3">
-            <div className="h-full bg-slate-50 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+            <div className="h-96 bg-slate-50 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
               <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
                 Horaire d&apos;ouverture
               </h1>
