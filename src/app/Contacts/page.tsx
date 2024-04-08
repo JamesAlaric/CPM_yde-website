@@ -30,7 +30,9 @@ const ContactsPage = () => {
           Contacts
         </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          Aute magna irure deserunt veniam aliqua magna enim voluptate.
+          Vous trouverez ci-après nos differents coordonnées. <br />
+          N&apos;hésitez à nous laisser un message en remplissant le formulaire,
+          nous vous répondrons dans les plus brefs delais.
         </p>
       </div>
       <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
@@ -44,7 +46,7 @@ const ContactsPage = () => {
             title="map"
             marginHeight={0}
             marginWidth={0}
-            scrolling="no"
+            scrolling="yes"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.78986022370728!2d11.526772452475472!3d3.8875759901473876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bc55a70bf331f%3A0xc4005ee620c3c476!2sIPM%2FCPM%20(Institut%20de%20Psychotraumatologie%20et%20de%20M%C3%A9diation)!5e0!3m2!1sen!2scm!4v1712371320317!5m2!1sen!2scm"
           ></iframe>
           <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">

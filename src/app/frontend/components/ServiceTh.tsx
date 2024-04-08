@@ -47,6 +47,7 @@ export default function ServTh() {
           key={feature.id}
           dir={feature.id % 2 !== 0 ? "rtl" : "ltr:text-right"}
           className={`grid grid-cols-1 lg:h-screen mt-1 lg:grid-cols-2`}
+          id={feature.name}
         >
           <div className="relative z-10 lg:py-16">
             <div className="relative h-64 sm:h-80 lg:h-full">

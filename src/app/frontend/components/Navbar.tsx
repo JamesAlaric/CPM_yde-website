@@ -22,33 +22,33 @@ const services = [
     name: "Thérapie Individuelle",
     description:
       " troubles émotionnels, relationnels, psychologiques, adolescents, adultes.",
-    href: "#",
+    href: "#Thérapie Individuelle",
     icon: UserRound,
   },
   {
     name: "Thérapie de Couple",
     description:
       "relations, surmonter, renforcer, proximité émotionnelle, équilibre.",
-    href: "#",
+    href: "#Thérapie de Couple",
     icon: Handshake,
   },
   {
     name: "Thérapie Familiale",
     description:
       "système social, compréhension, soutien, transition, événements.",
-    href: "#",
+    href: "#Thérapie Familiale",
     icon: Fingerprint,
   },
   {
     name: "Psychoéducation",
     description: "pour parents : gestion des enfants/adolescents.",
-    href: "#",
+    href: "#Psychoéducation",
     icon: Combine,
   },
 ];
 
 const menuItems = [
-  { name: "A propos", href: "#Bienvenu" },
+  { name: "Accueil", href: "/" },
   { name: "Services", href: "#Service", subItems: services },
   { name: "Contacts", href: "/Contacts" },
   { name: "Tarifs Consultation", href: "/Tarifs" },
@@ -90,12 +90,12 @@ const Navbar: React.FC = () => {
       className={`fixed w-full z-50 transition duration-500 ease-in-out ${navbarBg} ${navbarText}`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8"
         aria-label="Global"
       >
         {!mobileMenuOpen && (
           <div className="flex lg:flex-1">
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">CPM</span>
               <Image className="h-10 w-auto" src={CPM} alt="cpm_logo" />
             </Link>
@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
             <Fragment key={menuItem.name}>
               {menuItem.subItems ? (
                 <Popover className="relative">
-                  <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 ">
+                  <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6  hover:text-gray-300/75">
                     {menuItem.name}
                     <ChevronDown
                       className="h-5 w-5 flex-none"
@@ -182,7 +182,7 @@ const Navbar: React.FC = () => {
               ) : (
                 <Link
                   href={menuItem.href}
-                  className="text-sm font-semibold leading-6 "
+                  className="text-sm font-semibold leading-6  hover:text-gray-300/75"
                 >
                   {menuItem.name}
                 </Link>
@@ -193,7 +193,7 @@ const Navbar: React.FC = () => {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
           <Link
             href="#"
-            className="text-sm font-semibold leading-6 bg-seagull-500 hover:bg-seagull-600 p-2 rounded-md "
+            className="text-sm font-semibold leading-6 bg-seagull-500 hover:bg-seagull-600 text-white p-2 rounded-md "
           >
             Faites une Réservation en ligne{" "}
             <span aria-hidden="true">&rarr;</span>

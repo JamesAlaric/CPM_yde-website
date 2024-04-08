@@ -20,7 +20,7 @@ export default function CallAction() {
               Vous êtes une organisation, une institution ou une entreprise ?
             </h1>
             <p className="mt-4 text-lg text-seagull-950/75">
-              Nous collaborons egalement avec des entreprises de toutes tailles
+              Nous collaborons également avec des entreprises de toutes tailles
               ainsi que des organisations, incluant des institutions variées.{" "}
               <br />
               En choisissant nos services de thérapie, vous bénéficierez de

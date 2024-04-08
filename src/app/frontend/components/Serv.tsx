@@ -14,7 +14,7 @@ const problems = [
 
 export default function Serv() {
   return (
-    <div className="bg-seagull-50 bg-opacity-50 ml-0 py-0">
+    <div className="bg-seagull-50 h-full rounded-sm bg-opacity-50 ml-0 py-0">
       <div className="mx-auto grid max-w-2xl grid-cols-1 z-10 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-3 lg:px-8">
         <div className="lg:col-span-3 max-w-full">
           <h2 className="text-3xl text-seagull-950 font-bold tracking-tight sm:text-4xl ">
@@ -39,7 +39,6 @@ export default function Serv() {
             ferons de notre mieux pour vous aider dans vos difficultés.
           </p>
         </div>
-        <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8"></div>
       </div>
     </div>
   );
