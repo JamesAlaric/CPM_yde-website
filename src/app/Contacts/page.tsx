@@ -3,6 +3,7 @@
 import { Switch } from "@headlessui/react";
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -61,16 +62,30 @@ const ContactsPage = () => {
               <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
                 EMAIL
               </h2>
-              <a
+              <Link
                 href="mailto:Secretariat@cpm-ipm.org"
                 className="text-seagull-500 leading-relaxed"
               >
                 secretariat@cpm-ipm.org
-              </a>
+              </Link>
               <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                 TELEPHONE
               </h2>
-              <p className="leading-relaxed">123-456-7890</p>
+              <p className="leading-relaxed">
+                <Link
+                  href="tel:655656678"
+                  className="text-seagull-500 leading-relaxed"
+                >
+                  655-656-678
+                </Link>{" "}
+                <br />
+                <Link
+                  href="tel:675947917"
+                  className="text-seagull-500 leading-relaxed"
+                >
+                  675-947-917
+                </Link>
+              </p>
             </div>
           </div>
         </div>
