@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { mts } from "./frontend/font";
 import "./frontend/styles/globals.css";
 import Navbar from "./frontend/components/Navbar";
+import Footer from "./frontend/components/Footer";
 
 export const metadata: Metadata = {
   title: "CPM Yaoundé",
@@ -15,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${mts.variable} h-full`}>
-      <body className="h-full w-full">{children}</body>
+      <body className="h-full w-full">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
