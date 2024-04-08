@@ -55,8 +55,13 @@ const menuItems = [
 ];
 
 const callsToAction = [
-  { name: "Reservation", href: "#", icon: NotebookPen, color: "seagull" },
-  { name: "Appeler", href: "#", icon: Phone, color: "lime" },
+  {
+    name: "Reservation",
+    href: "#/Reservation",
+    icon: NotebookPen,
+    color: "seagull",
+  },
+  { name: "Appeler", href: "Tel:655656678", icon: Phone, color: "lime" },
 ];
 
 function classNames(...classNamees: string[]) {
@@ -162,17 +167,17 @@ const Navbar: React.FC = () => {
                         ))}
                       </div>
                       <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-100/75">
-                        {callsToAction.map((item) => (
+                        {callsToAction.map((items) => (
                           <Link
-                            key={item.name}
-                            href={item.href}
-                            className={`flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-seagull-950 hover:bg-${item.color}-100 hover:text-${item.color}-800`}
+                            key={items.name}
+                            href={items.href}
+                            className={`flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-seagull-950 hover:bg-${items.color}-100 hover:text-${items.color}-800`}
                           >
-                            <item.icon
+                            <items.icon
                               className={"h-5 w-5 flex-none"}
                               aria-hidden="true"
                             />
-                            {item.name}
+                            {items.name}
                           </Link>
                         ))}
                       </div>
