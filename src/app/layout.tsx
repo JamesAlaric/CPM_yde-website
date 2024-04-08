@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${mts.variable} h-full`}>
-      <body className="h-full">{children}</body>
+      <body className="h-full w-full">{children}</body>
     </html>
   );
 }

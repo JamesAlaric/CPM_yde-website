@@ -56,7 +56,7 @@ export default function Home() {
         <div className="mx-auto pt-10 grid grid-cols-1 lg:mx-4 lg:max-w-none lg:grid-cols-1 lg:items-start lg:gap-y-0">
           <Desc />
           <Serv />
-          <div className="lg:-ml-12 -mt-14 lg:p-12  lg:sticky lg:top-8 lg:col-start-2 lg:row-start-1 lg:overflow-hidden">
+          <div className="lg:-ml-12 -mt-14 lg:p-16  lg:sticky lg:top-8 lg:col-start-2 lg:row-start-1 lg:overflow-hidden">
             <ReservationForm />
           </div>
         </div>

@@ -9,8 +9,7 @@ const ContactBoard: React.FC = () => {
           <div className="p-4 lg:w-1/3">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.78986022370728!2d11.526772452475472!3d3.8875759901473876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bc55a70bf331f%3A0xc4005ee620c3c476!2sIPM%2FCPM%20(Institut%20de%20Psychotraumatologie%20et%20de%20M%C3%A9diation)!5e0!3m2!1sen!2scm!4v1712371320317!5m2!1sen!2scm"
-              height="384"
-              className="rounded-lg w-full"
+              className="rounded-lg h-96 w-full"
               style={{ border: 0 }}
               allowFullScreen={true}
               loading="lazy"
