@@ -8,6 +8,7 @@ import Coworker from "@/app/frontend/assets/CoworkerGroup.svg";
 import dev from "@/app/frontend/assets/dev.png";
 import woman from "@/app/frontend/assets/WomanSmile.png";
 import med from "@/app/frontend/assets/med.png";
+import Link from "next/link";
 
 export default function CallAction() {
   return (
@@ -96,6 +97,12 @@ export default function CallAction() {
                   </div>
                 </div>
               </div>
+              <Link
+                href="/Contacts"
+                className="inline-block rounded-md border border-transparent bg-seagull-600 px-8 py-3 text-center font-medium text-white hover:bg-seagull-700"
+              >
+                Contactez-nous
+              </Link>
             </div>
           </div>
         </div>
