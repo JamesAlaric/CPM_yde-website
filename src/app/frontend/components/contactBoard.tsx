@@ -26,7 +26,7 @@ const ContactBoard: React.FC = () => {
                 </span>
               </div>
 
-              <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
+              <h1 className="title-font sm:text-2xl text-xl font-medium text-seagull-950/95 mb-3">
                 Prendre Rendez-vous
               </h1>
               <div className="flex justify-center mt-6">
@@ -62,7 +62,7 @@ const ContactBoard: React.FC = () => {
           </div>
           <div className="p-4 lg:w-1/3">
             <div className="h-96 bg-slate-50 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-              <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
+              <h1 className="title-font sm:text-2xl text-xl font-medium text-seagull-950/95 mb-3">
                 Horaire d&apos;ouverture
               </h1>
               <p className="leading-relaxed mt-3">

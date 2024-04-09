@@ -21,7 +21,7 @@ const Step: React.FC = () => {
                 1
               </div>
               <div className="flex-grow pl-4">
-                {/* <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">
+                {/* <h2 className="font-medium title-font text-sm text-seagull-950/95 mb-1 tracking-wider">
                   STEP 1
                 </h2> */}
                 <p className="leading-relaxed">
@@ -58,7 +58,7 @@ const Step: React.FC = () => {
                 2
               </div>
               <div className="flex-grow pl-4">
-                {/* <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">
+                {/* <h2 className="font-medium title-font text-sm text-seagull-950/95 mb-1 tracking-wider">
                   STEP 2
                 </h2> */}
                 <p className="leading-relaxed">
@@ -72,7 +72,7 @@ const Step: React.FC = () => {
                 3
               </div>
               <div className="flex-grow pl-4">
-                {/* <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">
+                {/* <h2 className="font-medium title-font text-sm text-seagull-950/95 mb-1 tracking-wider">
                   FINISH
                 </h2> */}
                 <p className="leading-relaxed">

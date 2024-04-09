@@ -12,7 +12,7 @@ function classNames(...classes: string[]) {
 const ContactsPage = () => {
   const [agreed, setAgreed] = useState(false);
   return (
-    <section className="text-gray-600 body-font relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <section className="text-gray-600 body-font relative isolate bg-gradient-to-b from-seagull-700/15 via-white to-white px-6 py-24 sm:py-32 lg:px-8">
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
@@ -26,7 +26,7 @@ const ContactsPage = () => {
         />
       </div>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-seagull-950/95 sm:text-4xl">
           Contacts
         </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
@@ -51,7 +51,7 @@ const ContactsPage = () => {
           ></iframe>
           <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
             <div className="lg:w-1/2 px-6">
-              <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
+              <h2 className="title-font font-semibold text-seagull-950/95 tracking-widest text-xs">
                 ADRESSE
               </h2>
               <p className="mt-1">
@@ -61,7 +61,7 @@ const ContactsPage = () => {
               </p>
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
-              <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
+              <h2 className="title-font font-semibold text-seagull-950/95 tracking-widest text-xs">
                 EMAIL
               </h2>
               <Link
@@ -70,7 +70,7 @@ const ContactsPage = () => {
               >
                 secretariat@cpm-ipm.org
               </Link>
-              <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
+              <h2 className="title-font font-semibold text-seagull-950/95 tracking-widest text-xs mt-4">
                 TELEPHONE
               </h2>
               <p className="leading-relaxed">
@@ -100,7 +100,7 @@ const ContactsPage = () => {
             <div>
               <label
                 htmlFor="first-name"
-                className="block text-sm font-semibold leading-6 text-gray-900"
+                className="block text-sm font-semibold leading-6 text-seagull-950/95"
               >
                 Prenom(s)
               </label>
@@ -110,14 +110,14 @@ const ContactsPage = () => {
                   name="first-name"
                   id="first-name"
                   autoComplete="given-name"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-seagull-950/95 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="last-name"
-                className="block text-sm font-semibold leading-6 text-gray-900"
+                className="block text-sm font-semibold leading-6 text-seagull-950/95"
               >
                 Noms(s)
               </label>
@@ -127,14 +127,14 @@ const ContactsPage = () => {
                   name="last-name"
                   id="last-name"
                   autoComplete="family-name"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-seagull-950/95 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
               <label
                 htmlFor="company"
-                className="block text-sm font-semibold leading-6 text-gray-900"
+                className="block text-sm font-semibold leading-6 text-seagull-950/95"
               >
                 Organisation / Entreprise / Institution
               </label>
@@ -144,14 +144,14 @@ const ContactsPage = () => {
                   name="company"
                   id="company"
                   autoComplete="organization"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-seagull-950/95 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
               <label
                 htmlFor="email"
-                className="block text-sm font-semibold leading-6 text-gray-900"
+                className="block text-sm font-semibold leading-6 text-seagull-950/95"
               >
                 Email
               </label>
@@ -161,14 +161,14 @@ const ContactsPage = () => {
                   name="email"
                   id="email"
                   autoComplete="email"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-seagull-950/95 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
               <label
                 htmlFor="phone-number"
-                className="block text-sm font-semibold leading-6 text-gray-900"
+                className="block text-sm font-semibold leading-6 text-seagull-950/95"
               >
                 Numero de Tel
               </label>
@@ -196,14 +196,14 @@ const ContactsPage = () => {
                   name="phone-number"
                   id="phone-number"
                   autoComplete="tel"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-seagull-950/95 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
               <label
                 htmlFor="message"
-                className="block text-sm font-semibold leading-6 text-gray-900"
+                className="block text-sm font-semibold leading-6 text-seagull-950/95"
               >
                 Message
               </label>
@@ -212,7 +212,7 @@ const ContactsPage = () => {
                   name="message"
                   id="message"
                   rows={4}
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-seagull-950/95 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-seagull-600 sm:text-sm sm:leading-6"
                   defaultValue={""}
                 />
               </div>

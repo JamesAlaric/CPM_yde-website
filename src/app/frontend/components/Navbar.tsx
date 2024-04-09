@@ -12,10 +12,12 @@ import {
   Fingerprint,
   Combine,
   X,
+  MessageCircle,
   ChevronDown,
   Phone,
   NotebookPen,
 } from "lucide-react";
+import wha from "@/app/frontend/assets/Socials/whatsapp.png";
 
 const services = [
   {
@@ -52,16 +54,6 @@ const menuItems = [
   { name: "Services", href: "#Service", subItems: services },
   { name: "Contacts", href: "/Contacts" },
   { name: "Tarifs Consultation", href: "/Tarifs" },
-];
-
-const callsToAction = [
-  {
-    name: "Reservation",
-    href: "#/Reservation",
-    icon: NotebookPen,
-    color: "seagull",
-  },
-  { name: "Appeler", href: "Tel:655656678", icon: Phone, color: "lime" },
 ];
 
 function classNames(...classNamees: string[]) {
@@ -167,19 +159,26 @@ const Navbar: React.FC = () => {
                         ))}
                       </div>
                       <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-100/75">
-                        {callsToAction.map((items) => (
-                          <Link
-                            key={items.name}
-                            href={items.href}
-                            className={`flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-seagull-950 hover:bg-${items.color}-100 hover:text-${items.color}-800`}
-                          >
-                            <items.icon
-                              className={"h-5 w-5 flex-none"}
-                              aria-hidden="true"
-                            />
-                            {items.name}
-                          </Link>
-                        ))}
+                        <Link
+                          href="/Reservation"
+                          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-seagull-950 hover:bg-seagull-100 hover:text-seagull-800"
+                        >
+                          <NotebookPen
+                            className="h-5 w-5 flex-none"
+                            aria-hidden="true"
+                          />
+                          Reservation
+                        </Link>
+                        <Link
+                          href="https://wa.me/237655656678"
+                          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-seagull-950 hover:bg-lime-100 hover:text-lime-800"
+                        >
+                          <MessageCircle
+                            className="h-5 w-5 flex-none"
+                            aria-hidden="true"
+                          />
+                          WhatsApp
+                        </Link>
                       </div>
                     </Popover.Panel>
                   </Transition>
@@ -195,13 +194,21 @@ const Navbar: React.FC = () => {
             </Fragment>
           ))}
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
+        <div className="hidden lg:flex lg:flex-1 space-x-1 mx-1 lg:justify-end ">
           <Link
-            href="#"
+            href="https://wa.me/237655656678"
+            className="text-sm font-semibold leading-6 items-center bg-teal-600 hover:bg-teal-700 text-white p-2 rounded-md"
+          >
+            <div className="flex items-center gap-2">
+              <Image className="h-4 w-4 mb-1" src={wha} alt="wha_logo" />
+              <span>Ecrivez-nous sur Whatsapp</span>
+            </div>
+          </Link>
+          <Link
+            href="#/Reservation"
             className="text-sm font-semibold leading-6 bg-seagull-500 hover:bg-seagull-600 text-white p-2 rounded-md "
           >
-            Faites une Réservation en ligne{" "}
-            <span aria-hidden="true">&rarr;</span>
+            Réservez en ligne{" "}
           </Link>
         </div>
       </nav>
@@ -236,7 +243,7 @@ const Navbar: React.FC = () => {
                       <Disclosure>
                         {({ open }) => (
                           <>
-                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-seagull-950/95 hover:bg-gray-50">
                               {menuItem.name}
                               <ChevronDown
                                 className={classNames(
@@ -251,7 +258,7 @@ const Navbar: React.FC = () => {
                                 <a
                                   key={subItem.name}
                                   href={subItem.href}
-                                  className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                  className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-seagull-950/95 hover:bg-gray-50"
                                 >
                                   {subItem.name}
                                 </a>
@@ -263,7 +270,7 @@ const Navbar: React.FC = () => {
                     ) : (
                       <a
                         href={menuItem.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-seagull-950/95 hover:bg-gray-50"
                       >
                         {menuItem.name}
                       </a>
@@ -274,7 +281,7 @@ const Navbar: React.FC = () => {
               <div className="py-6">
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg bg-seagull-500 p-2 px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-seagull-700"
+                  className="-mx-3 block rounded-lg bg-seagull-500 p-2 px-3 py-2.5 text-base font-semibold leading-7 text-seagull-950/95 hover:bg-seagull-700"
                 >
                   Faites une Réservation en ligne
                 </Link>
