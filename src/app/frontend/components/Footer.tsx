@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
           <Link
             className="inline-block rounded-full bg-seagull-600 p-2 text-white shadow transition hover:bg-seagull-500 sm:p-3 lg:p-4"
-            href="#Bienvenu"
+            href=""
           >
             <span className="sr-only">Back to top</span>
 
@@ -45,10 +45,10 @@ const Footer = () => {
             <li>
               <Link
                 className="text-gray-700 transition hover:text-gray-700/75"
-                href="#Bienvenu"
+                href="/"
               >
                 {" "}
-                A Propos{" "}
+                Accueil{" "}
               </Link>
             </li>
 
@@ -65,7 +65,7 @@ const Footer = () => {
             <li>
               <Link
                 className="text-gray-700 transition hover:text-gray-700/75"
-                href="#Contacts"
+                href="/Contacts"
               >
                 {" "}
                 Contacts{" "}
@@ -75,7 +75,7 @@ const Footer = () => {
             <li>
               <Link
                 className="text-gray-700 transition hover:text-gray-700/75"
-                href="#Tarifs"
+                href="/Tarifs"
               >
                 {" "}
                 Tarifs{" "}
